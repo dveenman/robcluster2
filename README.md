@@ -10,7 +10,7 @@ A Stata program to combine robust regression estimation (M or MM) with multiway 
 
 ## Installation and dependencies
 
-The program can be installed by simply saving the \*.ado files into your local Stata directory that contains additional ado programs. To identify this folder, type and execute "sysdir" in your Stata command window and go to the folder listed at "PLUS". Make sure you place the program in the folder with the correct starting letter of the program (i.e., the folder names "r" for all programs) and the file extension is correctly specified as \*.ado.
+The program can be installed by simply saving the \*.ado file into your local Stata directory that contains additional ado programs. To identify this folder, type and execute "sysdir" in your Stata command window and go to the folder listed at "PLUS". Make sure you place the program in the folder with the correct starting letter of the program (i.e., the folder names "r" for all programs) and the file extension is correctly specified as \*.ado.
 
 The program requires the latest versions of `moremata` and `robreg` to be installed in Stata:
 ```
