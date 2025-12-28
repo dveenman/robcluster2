@@ -1,6 +1,7 @@
 *! version 2.1.0 20240911 David Veenman
 
 /* 
+20251228: 2.1.1     Fixed small issue with missing values in variables: added markout line
 20240911: 2.1.0     Adjusted syntax for consistency with robreg (e.g., "robcluster2 m y x" instead of "robcluster2 y x, m")
                     Added 3-way clustering option
                     Added option for sampling weights (pw)
@@ -24,6 +25,7 @@
 */
 
 program define robcluster2, eclass sortpreserve
+	version 19.5
 	syntax [anything] [in] [if] [pw], cluster(varlist) [eff(real 0)] [biweight] [noconstant] [tol(real 0)] [m(str)] [weightvar(str)] 
 
 	marksample touse
@@ -74,6 +76,9 @@ program define robcluster2, eclass sortpreserve
 		macro shift 1
 		local indepv "`*'"
 		
+		// Mark out missing observations:
+		markout `touse' `depv' `indepv'
+
 		// Check for collinearity and omit one variable if needed:
 		_rmcoll `indepv'
 		local indepv "`r(varlist)'"
