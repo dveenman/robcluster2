@@ -25,7 +25,7 @@
 */
 
 program define robcluster2, eclass sortpreserve
-	version 19.5
+	version 15
 	syntax [anything] [in] [if] [pw], cluster(varlist) [eff(real 0)] [biweight] [noconstant] [tol(real 0)] [m(str)] [weightvar(str)] 
 
 	marksample touse
